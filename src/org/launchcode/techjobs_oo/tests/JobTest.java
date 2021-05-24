@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class JobTest {
 
-    private Job testJob1, testJob2, testJob3, testJob4, testJob5;
+    private Job testJob1, testJob2, testJob3, testJob4, testJob5, testJob6;
 
     @Before
     public void createTestJobObject() {
@@ -18,6 +18,7 @@ public class JobTest {
         testJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         testJob4 = new Job("Entry Level Software Engineer", new Employer("Toyota"), new Location("Plano, TX"), new PositionType("Engineering"), new CoreCompetency("Problem Solving"));
         testJob5 = new Job("Entry Level Software Engineer", new Employer("Toyota"), new Location("Plano, TX"), new PositionType("Engineering"), new CoreCompetency("Problem Solving"));
+        testJob6 = new Job("Entry Level Software Engineer", new Employer("Toyota"), new Location("Plano, TX"), new PositionType("Engineering"), new CoreCompetency());
 
     }
 
@@ -30,7 +31,11 @@ public class JobTest {
     //test full constructor
     @Test
     public void testJobConstructorSetsAllFields() {
-        assertTrue(testJob3 instanceof Job);
+        assertTrue(testJob3.getName() instanceof String);
+        assertTrue(testJob3.getEmployer() instanceof Employer);
+        assertTrue(testJob3.getLocation() instanceof Location);
+        assertTrue(testJob3.getPositionType() instanceof PositionType);
+        assertTrue(testJob3.getCoreCompetency() instanceof CoreCompetency);
     }
 
     //test the equals method
@@ -38,5 +43,17 @@ public class JobTest {
     public void testJobsForEquality() {
         assertFalse(testJob4.equals(testJob5));
 
+    }
+
+    //test the toString method
+    @Test
+    public void testToString() {
+        String aString = ("\n" + "ID: " + testJob6.getId() +
+                "\n" + "Name: " + testJob6.getName() +
+                "\n" + "Employer: " + testJob6.getEmployer() +
+                "\n" + "Location: " + testJob6.getLocation() +
+                "\n" + "Position Type: " + testJob6.getPositionType() +
+                "\n" + "Core Competency " + testJob6.getCoreCompetency());
+        assertEquals(aString, testJob6.toString());
     }
 }
