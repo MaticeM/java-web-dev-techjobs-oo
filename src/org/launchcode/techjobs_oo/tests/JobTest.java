@@ -18,7 +18,7 @@ public class JobTest {
         testJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         testJob4 = new Job("Entry Level Software Engineer", new Employer("Toyota"), new Location("Plano, TX"), new PositionType("Engineering"), new CoreCompetency("Problem Solving"));
         testJob5 = new Job("Entry Level Software Engineer", new Employer("Toyota"), new Location("Plano, TX"), new PositionType("Engineering"), new CoreCompetency("Problem Solving"));
-        testJob6 = new Job("Entry Level Software Engineer", new Employer("Toyota"), new Location("Plano, TX"), new PositionType("Engineering"), new CoreCompetency());
+
 
     }
 
@@ -48,12 +48,12 @@ public class JobTest {
     //test the toString method
     @Test
     public void testToString() {
-        String aString = ("\n" + "ID: " + testJob6.getId() +
-                "\n" + "Name: " + testJob6.getName() +
-                "\n" + "Employer: " + testJob6.getEmployer() +
-                "\n" + "Location: " + testJob6.getLocation() +
-                "\n" + "Position Type: " + testJob6.getPositionType() +
-                "\n" + "Core Competency " + testJob6.getCoreCompetency());
-        assertEquals(aString, testJob6.toString());
+        String aString = ("\n" + "ID: " + testJob5.getId() +
+                "\n" + "Name: " + testJob5.getName() +
+                "\n" + "Employer: " + testJob5.getEmployer() +
+                "\n" + "Location: " + testJob5.getLocation() +
+                "\n" + "Position Type: " + testJob5.getPositionType() +
+                "\n" + "Core Competency " + testJob5.getCoreCompetency());
+        assertEquals(aString, testJob5.toString());
     }
 }
